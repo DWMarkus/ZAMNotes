@@ -31,11 +31,11 @@ public class DBManager {
     }
 
     // Méthodes de DBManager
-    public void insert(String name, String desc)
+    public void insert(String titre, String desc)
     {
         ContentValues contentValues = new ContextValues();
-        ContentValues.put(DatabaseHelper.TITRE, name);
-        ContentValues.put(DatabaseHelper.DESC, desc);
-        database.insert(DatabaseHelper.TABLE_NAME, value: null, contentValues);
+        contentValues.put(DatabaseHelper.TITRE, titre);
+        contentValues.put(DatabaseHelper.DESC, desc);
+        database.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
     }
 }
