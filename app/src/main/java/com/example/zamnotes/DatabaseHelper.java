@@ -11,7 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Colonnes :
     public static final String _ID = "_id";
     public static final String TITRE = "titre";
-    public static final String DESC = "contenu";
+    public static final String DESC = "description";
 
     // BDD :
     static final String DB_NAME = "ZAM_APP.DB";
@@ -22,19 +22,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Création de la Table :
     private static final String CREATE_TABLE = "create table" + TABLE_NAME + "(" + _ID  + " INTEGER PRIMARY KEY AUTOINCREMENT, " + TITRE + " TEXT NOT NULL, " + DESC + " TEXT);";
 
-    public DatabaseHelper(Context context) {
-        super(context, DB_NAME, factory:null, DB_VERSION);
+    public DatabaseHelper(Context context)
+    {
+        super(context, DB_NAME, factory(null), DB_VERSION);
     }
 
-    @Override
-    public void OnCreate(SQLiteDatabase db){
+    public void OnCreate(SQLiteDatabase db)
+    {
         // Execute la requete
         db.execSQL(CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int OldVersion, int NewVersion) {
-        db.execSQL("DROP TABLE UF EXITST " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 }
