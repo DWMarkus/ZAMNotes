@@ -54,7 +54,7 @@ public class NotesListActivity extends AppCompatActivity {
         {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView idTewtView = view.findViewById(R.id.id);
+                TextView idTextView = view.findViewById(R.id.id);
                 TextView titleTextView = view.findViewById(R.id.title);
                 TextView descTextView = view.findViewById(R.id.desc);
 
